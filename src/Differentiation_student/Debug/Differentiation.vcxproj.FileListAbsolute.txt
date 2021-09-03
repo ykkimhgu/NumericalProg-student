@@ -1,0 +1,4 @@
+C:\Users\ykkim\source\repos\GithubDesktop\NumericalMethod\tutorial\Differentiation_student\Debug\Differentiation.exe
+C:\Users\ykkim\source\repos\GithubDesktop\NumericalMethod\tutorial\Differentiation_student\Debug\Differentiation.pdb
+C:\Users\ykkim\source\repos\GithubDesktop\tutorial-NM\src\Differentiation_student\Debug\Differentiation.exe
+C:\Users\ykkim\source\repos\GithubDesktop\tutorial-NM\src\Differentiation_student\Debug\Differentiation.pdb
