@@ -20,9 +20,10 @@ This is the private github repository for Numerical Programming Library created 
 
 ## Documentation
 
-[See here for API documentation ](./docs/NP.md)
+[See here for API documentation ](./docs/NP_API_Documentation.md.md)
 
 
+[See here for API documentation ](https://github.com/ykkimhgu/NumericalProg-student/blob/main/docs/NP_API_Documentation.md#example-api-documentation)
 
 
 ## Contents
