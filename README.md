@@ -6,7 +6,7 @@ Author:  Your Name
 
 Date:  Updated 2021-8-31
 
-Lecture: Numerical Programming by Young-Keun Kim, Handong Global University [docs/NP_API_Documentation.md]
+Lecture: Numerical Programming by Young-Keun Kim, Handong Global University 
 
 
 
@@ -20,10 +20,8 @@ This is the private github repository for Numerical Programming Library created 
 
 ## Documentation
 
-[See here for API documentation ](./docs/NP_API_Documentation.md.md)
+[See here for API documentation ](./docs/NP_API_Documentation.md)
 
-
-[See here for API documentation ](https://github.com/ykkimhgu/NumericalProg-student/blob/main/docs/NP_API_Documentation.md#example-api-documentation)
 
 
 ## Contents
