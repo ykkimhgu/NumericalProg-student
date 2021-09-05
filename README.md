@@ -14,7 +14,7 @@ Lecture: Numerical Programming by Young-Keun Kim, Handong Global University
 
 # Introduction
 
-This is the private github repository for Numerical Programming Library created in the Lecture.
+This is the private github repository for Numerical Programming Library created for the Lecture.
 
 
 
