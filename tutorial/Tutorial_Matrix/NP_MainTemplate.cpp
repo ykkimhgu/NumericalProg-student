@@ -12,7 +12,8 @@ Description      : NP_MainTemplate.cpp
 #define Assignment	2		// enter your assignment number
 #define eval		0		// set 0
 
-#include "myNP.h"
+//#include "myNP.h"
+#include "myMatrix.h"
 
 int main(int argc, char* argv[])
 {

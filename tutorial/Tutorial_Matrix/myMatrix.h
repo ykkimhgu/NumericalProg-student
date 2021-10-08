@@ -36,7 +36,11 @@ extern	Matrix	txt2Mat(std::string _filePath, std::string _fileName);
 extern	void	printMat(Matrix _A, const char* _name);
 
 
+// Matrix addition
+extern	Matrix	addMat(Matrix _A, Matrix _B);
 
+// Apply back-substitution
+extern	Matrix	backSub(Matrix _U, Matrix _b);
 
 /// It is recommended to create the following functions.
 
