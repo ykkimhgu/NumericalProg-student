@@ -64,7 +64,6 @@ int main(int argc, char* argv[])
 	double xin = 2.5;
 	double y=myFunc(xin);
 	printf("\n y=myFun(xin) = %f \n\n", y);	
-	func_call(myFunc, xin);
 	printf("\n**************************************************\n\n");
 	
 		
