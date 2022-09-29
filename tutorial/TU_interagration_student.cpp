@@ -23,7 +23,7 @@ double IntegrateRect(double x[], double y[], int m);
 
 int main(int argc, char* argv[])
 {
-	// PART 1. Integration from Datasets
+	// PART 1. Integration from Datasets, may not evenly distribted
 	printf("\n**************************************************");
 	printf("\n        PART 1. Integration from Datasets         ");
 	printf("\n**************************************************\n");
@@ -41,9 +41,9 @@ int main(int argc, char* argv[])
 
 	
 
-	// PART 3. Integration from Datasets with evenly distributed
+	// PART 2. Integration from Datasets with evenly distributed
 	printf("\n**************************************************");
-	printf("\n        PART 2. Integration from a Function       ");
+	printf("\n        PART 2. Integration from Datasets, may not evenly distribted       ");
 	printf("\n**************************************************\n");
 
 	double I_simpson = 0;
