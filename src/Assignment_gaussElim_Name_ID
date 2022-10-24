@@ -1,0 +1,84 @@
+/*-------------------------------------------------------------------------------\
+@ Numerical Programming by Young-Keun Kim - Handong Global University
+
+Author           : [YOUR NAME]
+Created          : 19-10-2022
+Modified         : 19-10-2022
+Language/ver     : C++ in MSVS2022
+
+Description      : Assignment_gaussElim_Name_ID.cpp
+-------------------------------------------------------------------------------*/
+
+#define Assignment	4		// enter your assignment number
+#define eval		0		// set 0
+
+#include "../../../include/myNP.h"
+#include "../../../include/myMatrix.h"
+
+int main(int argc, char* argv[])
+{
+	/*	 [※ DO NOT EDIT IT !!!]   Resources file path setting for evaluation	*/
+	std::string path = "C:/NP_Matrix_Data/Assignment" + std::to_string(Assignment) + "/";
+
+#if eval
+	path += "eval/";
+#endif
+
+	/*==========================================================================*/
+	/*					Variables declaration & initialization					*/
+	/*--------------------------------------------------------------------------*/
+	/*   - You can change the variable names									*/
+	/*   - However, you must use the specified file name						*/
+
+	/* ======== Q1.Analyze the current in each mesh in the given circuit ======== */
+	Matrix prob1_matA = txt2Mat(path, "prob1_matA");
+	Matrix prob1_vecb = txt2Mat(path, "prob1_vecb");
+
+	/* =============== Q2.Determine the displacement (u1, u2, u3) =============== */
+	Matrix prob2_matA = txt2Mat(path, "prob2_matA");
+	Matrix prob2_vecb = txt2Mat(path, "prob2_vecb");
+
+
+	/*==========================================================================*/
+	/*					Apply your numerical method algorithm					*/
+	/*==========================================================================*/
+
+	/// =================================  Q1  ==================================
+	// [TO-DO] YOUR CODE GOES HERE
+	// [TO-DO] YOUR CODE GOES HERE
+	// [TO-DO] YOUR CODE GOES HERE
+
+	/// =================================  Q2  ==================================
+	// [TO-DO] YOUR CODE GOES HERE
+	// [TO-DO] YOUR CODE GOES HERE
+	// [TO-DO] YOUR CODE GOES HERE
+
+
+	/*==========================================================================*/
+	/*							  Print your results							*/
+	/*==========================================================================*/
+
+	/// Q1
+	printf("\n================= Output of Q1 =================\n");
+	// [TO-DO] YOUR CODE GOES HERE
+	// [TO-DO] YOUR CODE GOES HERE
+	// [TO-DO] YOUR CODE GOES HERE
+
+	/// Q2
+	printf("\n================= Output of Q2 =================\n");
+	// [TO-DO] YOUR CODE GOES HERE
+	// [TO-DO] YOUR CODE GOES HERE
+	// [TO-DO] YOUR CODE GOES HERE
+
+
+	/*==========================================================================*/
+	/*							  Deallocate memory 							*/
+	/*==========================================================================*/
+	
+	// [TO-DO] YOUR CODE GOES HERE
+	// [TO-DO] YOUR CODE GOES HERE
+	// [TO-DO] YOUR CODE GOES HERE
+
+	system("pause");
+	return 0;
+}
