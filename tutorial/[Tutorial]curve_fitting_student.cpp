@@ -12,7 +12,7 @@ Description      : [Tutorial]curve_fitting.cpp
 #include "myNM.h"
 
 // Returns the parameters of the linear least square function.
-Matrix	linearFit(Matrix _x, Matrix _y);
+Matrix	linearRegression(Matrix _x, Matrix _y);
 
 // Create a matrix from 1D-array
 Matrix	arr2Mat(double* _1Darray, int _rows, int _cols);
@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
 	Matrix T = arr2Mat(T_array, M, 1);
 	Matrix P = arr2Mat(P_array, M, 1);
 
-	Matrix z = linearFit(T, P);
+	Matrix z =linearRegression(T, P);
 
 	printMat(T, "T");
 	printMat(P, "P");
@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
 }
 
 // Returns the parameters of the linear least square function.
-Matrix	linearFit(Matrix _x, Matrix _y) {
+Matrix	linearRegression(Matrix _x, Matrix _y) {
 	int mx = _x.rows;
 	int my = _y.rows;
 
