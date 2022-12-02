@@ -101,7 +101,7 @@ Matrix vecd = zeros(vecb.rows, vecb.cols);
 
 gaussElim(matA, vecb, matU, vecd);
 ```
-## solveLinear()
+### solveLinear()
 
 solves for vector **x** from  Ax=b,  a linear system problem  
 
