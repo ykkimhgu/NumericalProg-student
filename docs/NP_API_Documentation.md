@@ -124,7 +124,7 @@ extern Matrix solveLinear(Matrix _A, Matrix _b, char* _method)
 
 #### Examples
 
-exit: Ctrl+↩
+
 
 ```C
 double A_array[] = { 1, 3, -2, 4,		2, -3, 3, -1,		-1, 7, -4, 2,		-1, 7, -4, 2 };
