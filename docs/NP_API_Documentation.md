@@ -101,6 +101,42 @@ Matrix vecd = zeros(vecb.rows, vecb.cols);
 
 gaussElim(matA, vecb, matU, vecd);
 ```
+## solveLinear()
+
+solves for vector **x** from  Ax=b,  a linear system problem  
+
+```c
+extern Matrix solveLinear(Matrix _A, Matrix _b, char* _method)
+```
+
+#### **Parameters**
+
+- **A**:  Matrix **A** in structure Matrix form.  Should be (nxn) square.
+
+- **b**:  vector  **b** in structure Matrix form.  Should be (nx1) 
+
+- **method:  character type,** 
+
+  - **'lu' :** LU decomposition
+  - **'gauss':** Gauss elimination
+
+  
+
+#### Examples
+
+exit: Ctrl+↩
+
+```C
+double A_array[] = { 1, 3, -2, 4,		2, -3, 3, -1,		-1, 7, -4, 2,		-1, 7, -4, 2 };
+double b_array[] = { -11,		6,		-9,		15 };
+
+Matrix matA = arr2Mat(A_array, M, N);
+Matrix vecb = arr2Mat(b_array, M, 1);
+
+Matrix x_lu = solveLinear(matA, vecb, "LU");
+Matrix invA_gj = inv(matA, "gj");
+Matrix invA_lu = inv(matA, "LU");
+```
 
 ### inv\(\)
 
