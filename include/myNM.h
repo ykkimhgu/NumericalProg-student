@@ -16,6 +16,7 @@ Description      : myNM.h
 
 // New function for assignment
 void tempFunction(int m);
+void tempFunction2(int m);
 
 // Function mdified
 
