@@ -61,7 +61,7 @@ Create a new C/C++ source file for main()
 
 Notice of the **text file** and **file name** of the matrix required along with the assignment.
 
-```txt
+```
 [File Path]
     C:/NP_Matrix_Data/Assignment3
 
