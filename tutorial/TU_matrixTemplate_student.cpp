@@ -10,16 +10,17 @@ Description      : Tutorial code for using matrix structure
 -------------------------------------------------------------------------------*/
 
 #define ASGN		999		// enter your assignment number
-#define EVAL		0		// [¡Ø DO NOT EDIT !!!]
+#define EVAL		0		// [Â¡Ã˜ DO NOT EDIT !!!]
 
 
-#include "myMatrix.h"
+#include "../../include/myMatrix.h"
+#include "../../include/myNP.h"
 
 
 int main(int argc, char* argv[])
 {
-	/*	 [¡Ø DO NOT EDIT !!!]   Resources file path setting for evaluation	*/
-	std::string path = "C:/NP_data/Assignment" + std::to_string(ASGN) + "/";
+	/*	 [Â¡Ã˜ DO NOT EDIT !!!]   Resources file path setting for evaluation	*/
+	std::string path = "C:/NP_Data/Assignment" + std::to_string(ASGN) + "/";
 
 #if EVAL
 	path += "eval/";
@@ -46,7 +47,7 @@ int main(int argc, char* argv[])
 	Matrix vecy = createMat(rows, 1);
 		
 	// Option 3:  Create a zero matrix with specific size
-	Matrix matD = zerosMat(matA.rows, matB.cols);
+	Matrix matD = zeros(matA.rows, matA.cols);
 	
 	
 	// Your Code goes Here
