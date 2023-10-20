@@ -19,7 +19,7 @@ Description      : Tutorial code for using matrix structure
 
 int main(int argc, char* argv[])
 {
-#if _WINDOWS
+#if _WIN64
 	/*	 [¡Ø DO NOT EDIT !!!]   Resources file path setting for evaluation	*/
 	std::string path = "C:/NP_Data/Assignment" + std::to_string(ASGN) + "/";
 #elif __APPLE__
