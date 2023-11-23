@@ -65,7 +65,7 @@ Matrix	linearFit(Matrix _x, Matrix _y) {
 	// ADD YOUR CODE HERE
 	// ADD YOUR CODE HERE
 
-	double z_array[] = { a1, a0 };
+	double z_array[] = { a0, a1 };
 	return arr2Mat(z_array, 2, 1);
 }
 
