@@ -3,19 +3,30 @@
 
 Author           : [YOUR NAME]
 Created          : 03-05-2021
-Modified         : 03-05-2021
+Modified         : 11-23-2023
 Language/ver     : C++ in MSVS2019
 
 Description      : [Tutorial]curve_fitting.cpp
 -------------------------------------------------------------------------------*/
 
-#include "myNM.h"
+#include "myNP.h"
+#include "myMatrix.h"
 
-// Returns the parameters of the linear least square function.
-Matrix	linearRegression(Matrix _x, Matrix _y);
+Matrix	linearFit(Matrix _X, Matrix _Y);
+// or
+// void linearFit(double* vecZ, double* vecX, double* vecY);
+
+Matrix	polyFit(Matrix _X, Matrix _Y, int n);
+// or
+//void polyFit(double* vecZ, double* vecX, double* vecY, int n);
+
+Matrix	expFit(Matrix _X, Matrix _Y);
+// or
+// void expFit(double* vecZ, double* vecX, double* vecY);
+
 
 // Create a matrix from 1D-array
-Matrix	arr2Mat(double* _1Darray, int _rows, int _cols);
+Matrix	arr2Mat(double* _1Darray, int _rows, int _cols);  // <-- move this to myMatrix.h, myMatrix.cpp
 
 int main(int argc, char* argv[])
 {
@@ -26,7 +37,7 @@ int main(int argc, char* argv[])
 	Matrix T = arr2Mat(T_array, M, 1);
 	Matrix P = arr2Mat(P_array, M, 1);
 
-	Matrix z =linearRegression(T, P);
+	Matrix z =linearFit(T, P);
 
 	printMat(T, "T");
 	printMat(P, "P");
@@ -37,7 +48,7 @@ int main(int argc, char* argv[])
 }
 
 // Returns the parameters of the linear least square function.
-Matrix	linearRegression(Matrix _x, Matrix _y) {
+Matrix	linearFit(Matrix _x, Matrix _y) {
 	int mx = _x.rows;
 	int my = _y.rows;
 
