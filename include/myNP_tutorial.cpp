@@ -59,3 +59,11 @@ double sinTaylor2(double _x)
 
 	return S_N;
 }
+
+// print 1D vector
+void printVec(double* vec, int size)
+{
+	for (int i = 0; i < size; i++)
+		printf("Vector[%d] = %.1f \n", i, vec[i]);
+	printf("\n");
+}
