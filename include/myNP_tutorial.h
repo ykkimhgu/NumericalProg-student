@@ -30,6 +30,8 @@ extern double power(double _x, int N);
 // Taylor series approximation for sin(x) without using pre-defined functions (input unit: [rad])
 extern double sinTaylor2(double _x);
 
+// print 1D vector
+extern void printVec(double* vec, int row);
 
 
 #endif
