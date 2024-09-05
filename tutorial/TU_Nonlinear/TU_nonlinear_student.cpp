@@ -13,10 +13,10 @@ Description     : Tutorial of Bisection Method
 #include "stdio.h"
 #include "stdlib.h"
 #include <math.h>
-//#include "myNP.h"
+//#include "../../include/myNP.h"
 
 
-// Move function declaration to  `myNM.h`
+// Move function declaration to  `myNP.h`
 double bisection(float _a0, float _b0, float _tol);  
 double newtonRaphson(double _x0, double _tol);
 double func(double x);
@@ -31,10 +31,10 @@ void main() {
 	/*==========================================================================*/
 
 	/************      Variables declaration & initialization      ************/
-	float tol = 0.00001;
-	float a0 = 2;			//need to change initial value
-	float b0 = 3;			//need to change initial value
-	double sol_bm;
+	double tol = 0.00001;
+	double a0 = 2;			//need to change initial value
+	double b0 = 3;			//need to change initial value
+	double sol_bm=0;
 
 	/************      Solve  &		Show Output			           ************/
 	printf("------------------------------------------------------------------------------------\n");
@@ -54,7 +54,7 @@ void main() {
 	/*==========================================================================*/
 	
 	/************      Variables declaration & initialization      ************/
-	double sol_nr;
+	double sol_nr=0;
 	double x0 = 3;
 
 	printf("------------------------------------------------------------------------------------\n");
@@ -76,13 +76,13 @@ void main() {
 
 
 /*==========================================================================*/
-/*						Function Definitions								*/			
+/*                    Function Definitions		   		*/			
 /*==========================================================================*/
 //
-// Move function definitions to  `myNM.c`
 
+// Move these function definitions to  `myNP.c`
 
-
+/* function f(x) of the problem */
 double func(double x) 
 {
 	
@@ -92,7 +92,7 @@ double func(double x)
 	return F;
 }
 
-// Move function definitions to  `myNM.c`
+/* first derivative of function f(x) of the problem */
 double dfunc(double x)
 {
 	double dF = 0;
@@ -103,8 +103,6 @@ double dfunc(double x)
 
 
 
-// Define Bisection function, assuming (func(a) * func(b) <0 )
-
 /* Bisection Method
 	_a      : initial value #1
 	_b      : initial value #2
@@ -112,6 +110,7 @@ double dfunc(double x)
 */
 double bisection(float _a0, float _b0, float _tol) 
 {
+	// Define Bisection function, assuming (func(a) * func(b) <0 )
 	// Initialization
 	int k = 0;
 	int Nmax = 100;
@@ -143,7 +142,7 @@ double bisection(float _a0, float _b0, float _tol)
 
 
 
-// Move function definitions to  `myNM.c`
+/* Newton-Raphson Method without Passing a Function  */
 double newtonRaphson(double _x0, double _tol)
 {
 	float xn = _x0;
@@ -152,8 +151,7 @@ double newtonRaphson(double _x0, double _tol)
 	int Nmax = 1000;
 	int k = 0;
 	double h = 0;
-
-	do {
+	while (k<Nmax && ep>_tol) {
 		if (dfunc(xn) == 0)
 		{
 			printf("[ERROR] dF == 0 !!\n");
@@ -161,26 +159,26 @@ double newtonRaphson(double _x0, double _tol)
 		}
 		else
 		{
-			// get h=f/df @ x(k)
-			// [TO-DO] YOUR CODE GOES HERE
-			// h=__________;   
+		// get h=f/df @ x(k)
+		// [TO-DO] YOUR CODE GOES HERE
+		// h=__________;   
 
-			// update x(k+1)=x(k)+h(k)
-			// [TO-DO] YOUR CODE GOES HERE
-			// xk=_____________;  
+		// update x(k+1)=x(k)+h(k)
+		// [TO-DO] YOUR CODE GOES HERE
+		// xk=_____________;  
 
-			// check tolerance
-			// [TO-DO] YOUR CODE GOES HERE
-			//ep=_____________;  % YOUR CODE GOES HERE 
+		// check tolerance
+		// [TO-DO] YOUR CODE GOES HERE
+		//ep=_____________;  % YOUR CODE GOES HERE 
 
-			k++;
+		k++;
 
-			printf("k:%d \t", k);
-			printf("X(k): %f \t", xn);
-			printf("Tol: %.10f\n", ep);
+		printf("k:%d \t", k);
+		printf("X(k): %f \t", xn);
+		printf("Tol: %.10f\n", ep);
 
 		}
-	} while (k < Nmax && ep > _tol);
+	} 
 
 	return xn;
 }
