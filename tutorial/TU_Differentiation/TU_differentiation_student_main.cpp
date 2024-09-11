@@ -5,7 +5,7 @@ Author          : Young-Keun Kim
 Created         : 01-04-2019
 Modified        : 11-27-2023
 Language/ver	: C in MSVS2017
-Course		: Numerical Programming 
+Course		: Numerical Programming
 
 Description      : [Tutorial]Differentiation.cpp
 -------------------------------------------------------------------------------*/
@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
 	/*==========================================================================*/
 	/*   Part 1 -     Differentiation from discrete dataset points              */
 	/*==========================================================================*/
-	
+
 	printf("\n**************************************************");
 	printf("\n|                     PART 1.                    |");
 	printf("\n**************************************************\n");
@@ -40,14 +40,17 @@ int main(int argc, char* argv[])
 
 	/************      Solve  &	Show Output	   ************/
 	// Differentiation from discrete dataset points
-	gradient1D(t, x, dxdt, m);
-	printVec(dxdt, m);
+	
+	// [YOUR CODE GOES HERE]
+	// gradient1D(t, x, dxdt, m);
+	// printVec(dxdt, m);
 
-/*
+	
 
 	/*==========================================================================*/
 	/*   Part 2 -     Differentiation from a function                           */
 	/*==========================================================================*/
+
 	
 	printf("\n**************************************************");
 	printf("\n|                     PART 2.                    |");
@@ -55,19 +58,21 @@ int main(int argc, char* argv[])
 
 	/************      Variables declaration & initialization      ************/
 	double xin = 2.5;
-	double dydx[21];  // m=21 points
-	
+	double dydx[21] = { 0 };  // m=21 points
+
 	// User defined function F(x)
-	double y=myFunc(xin);
-	printf("\n y=myFun(xin) = %f \n\n", y);	
-	
-		
+	double y = myFunc(xin);
+	printf("\n y=myFun(xin) = %f \n\n", y);
+
+
 	/************      Solve  &	Show Output	   ************/
 	// Estimate differentation from the user defined function 
-	gradientFunc(myFunc, t, dydx, m);
-	printVec(dydx, m);
-			
-*/
+	
+	// [YOUR CODE GOES HERE]
+	// gradientFunc(myFunc, t, dydx, m);
+	// printVec(dydx, m);
+
+
 	system("pause");
 	return 0;
 }
