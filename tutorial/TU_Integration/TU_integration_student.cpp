@@ -9,17 +9,22 @@ Language/ver     : C++ in MSVS2019
 Description      : [Tutorial] Integration_student.cpp
 -------------------------------------------------------------------------------*/
 
-// #include "myNM.h"
+#include "stdio.h"
+#include "stdlib.h"
 
+//#include "../../include/myNP_myID.h"
 
-
-// Integration using rectangular method for discrete data inputs
+// Sample Code: Integration rectangular method 
 double IntegrateRect(double x[], double y[], int m);
 
 // You need to create myFunc() in this main source file
-// You need to create trapz() in myNM.h. myNM.cpp
-// You need to create simpson13() in myNM.h. myNM.cpp
-// You need to create integral() in myNM.h. myNM.cpp
+double myFunc(const double x);
+
+
+// You need to create the followins in  in myNP.h. myNP.cpp
+// double trapz (double x[ ], double y[ ], int m);
+// double simpson13(double x[ ], double y[ ], int m);
+// double integral(double func(const double x), double a, double b, int n);  
 
 
 int main(int argc, char* argv[])
@@ -29,23 +34,28 @@ int main(int argc, char* argv[])
 	printf("\n        PART 1. Integration from Datasets         ");
 	printf("\n**************************************************\n");
 
+	/************      Variables declaration & initialization      ************/
 	double x[] = { 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60 };
 	double y[] = { 0, 3, 8, 20, 33, 42, 40, 48, 60, 12, 8, 4, 3 };
 	int M = sizeof(x) / sizeof(x[0]);
 
+
+
+	/************      Solve  &	Show Output	   ************/
 	double I_rect = IntegrateRect(x, y, M);
 	printf("I_rect  = %f\n", I_rect);
 
-
 	// Exercise 1. Trapezoid
 	double I_trapz = 0;
-	// ADD YOUR CODE HERE  I_trapz=trapz()
+	// [YOUR CODE HERE]
+	// I_trapz=trapz()
 	printf("I_trapz = %f\n\n", I_trapz);
 
 
 	// Exercise 2. Simpson
 	double I_simpson = 0;
-	// ADD YOUR CODE HERE.   I_simpson13=simpson13()
+	// [YOUR CODE HERE]
+	// I_simpson13=simpson13()
 	printf("I_simpson13  = %f\n\n", I_simpson13);
 	
 
@@ -57,7 +67,8 @@ int main(int argc, char* argv[])
 	
 	// Exercise 3. Integral
 	double I_function = 0;
-	// ADD YOUR CODE HERE.   I_function=integral()
+	// [YOUR CODE HERE]
+	// I_function=integral()
 	printf("I_function  = %f\n\n", I_function);
 
 	system("pause");
@@ -65,7 +76,9 @@ int main(int argc, char* argv[])
 }
 
 
-// Integration using rectangular method for discrete data inputs
+
+
+// Sample Code: Integration rectangular method 
 double IntegrateRect(double x[], double y[], int m) {
 	int N = m - 1;
 	double I = 0;
