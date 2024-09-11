@@ -1,19 +1,20 @@
-/*-------------------------------------------------------------------------------\
+/*------------------------------------------------------------------------------------------\
 @ Numerical Methods by Young-Keun Kim - Handong Global University
 
-Author           : SSS LAB
-Created          : 10-05-2021
-Modified         : 8-05-2022
-Language/ver     : C++ in MSVS2019
+Author          : Young-Keun Kim
+Created         : 01-04-2019
+Modified        : 11-27-2023
+Language/ver	: C in MSVS2017
+Course		: Numerical Programming 
 
 Description      : [Tutorial]Differentiation.cpp
 -------------------------------------------------------------------------------*/
 
 #include "stdio.h"
 #include "stdlib.h"
+#include <math.h>
 
-//#include "myNM.h"
-#include "../Include/myNM.h"
+//#include "../../include/myNP_myID.h"
 
 
 int main(int argc, char* argv[])
