@@ -153,10 +153,10 @@ Matrix	zeros(int _rows, int _cols)
 
 // Multiply  matrix A and matrix B
 extern	Matrix	multMat(Matrix _A, Matrix _B) {
-
+	Matrix Out = createMat(_A.rows, _A.cols);
 	// add your code here
 	// add your code here
 	// add your code here
 
-
+	return Out;
 }
