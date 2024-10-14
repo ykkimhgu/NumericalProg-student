@@ -13,7 +13,7 @@ Description      : Tutorial code for using matrix structure
 #define EVAL		0		// [¡Ø DO NOT EDIT !!!]
 
 
-#include "../../include/myMatrix.h"
+#include "../../include/myMatrix_student.h"
 #include "../../include/myNP.h"
 
 
