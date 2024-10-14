@@ -3,40 +3,15 @@
 
 Author           : [YOUR NAME]
 Created          : 26-03-2018
-Modified         : 18-03-2023
+Modified         : 14-10-2024
 Language/ver     : C++ in MSVS2019
 
 Description      : myMatrix.cpp
 ----------------------------------------------------------------*/
 
 #include "myMatrix_student.h"
-//#include "myMatrix.h"   
 
 
-
-// Create Matrix with specified size
-Matrix	createMat(int _rows, int _cols)
-{
-	// check matrix dimension
-	if (_rows < 0 || _cols < 0) {
-		printf("\n****************************************************");
-		printf("\n  ERROR!!: dimension error at 'createMat' function");
-		printf("\n****************************************************\n");
-		return createMat(0, 0);
-	}
-
-	Matrix Out;
-	// 1. Allocate row array first
-	Out.at = (double**)malloc(sizeof(double*) * _rows);
-	// 2. Then, allocate column 
-	for (int i = 0; i < _rows; i++)
-		Out.at[i] = (double*)malloc(sizeof(double) * _cols);
-	// 3. Initialize row & column values of a matrix
-	Out.rows = _rows;
-	Out.cols = _cols;
-
-	return Out;
-}
 
 // Free a memory allocated matrix
 void	freeMat(Matrix _A)
@@ -85,6 +60,41 @@ Matrix	txt2Mat(std::string _filePath, std::string _fileName)
 	return Out;
 }
 
+// Create Matrix with specified size
+Matrix	createMat(int _rows, int _cols)
+{
+	// check matrix dimension
+	if (_rows < 0 || _cols < 0) {
+		printf("\n****************************************************");
+		printf("\n  ERROR!!: dimension error at 'createMat' function");
+		printf("\n****************************************************\n");
+		return createMat(0, 0);
+	}
+
+	Matrix Out;
+	// 1. Allocate row array first
+	Out.at = (double**)malloc(sizeof(double*) * _rows);
+	// 2. Then, allocate column 
+	for (int i = 0; i < _rows; i++)
+		Out.at[i] = (double*)malloc(sizeof(double) * _cols);
+	// 3. Initialize row & column values of a matrix
+	Out.rows = _rows;
+	Out.cols = _cols;
+
+	// 4. Initialize with zero (optional)
+	initMat(Out, 0);
+	return Out;
+}
+
+
+// initialization of Matrix elements
+void	initMat(Matrix _A, double _val)
+{
+	for (int i = 0; i < _A.rows; i++)
+		for (int j = 0; j < _A.cols; j++)
+			_A.at[i][j] = _val;
+}
+
 // Print matrix
 void	printMat(Matrix _A, const char* _name)
 {
@@ -121,21 +131,11 @@ Matrix	addMat(Matrix _A, Matrix _B)
 
 
 //////////////////////////////////////////////////////////////////
-/*							Tutorial							*/
+/*				Tutorial	&  Assignment						*/
 //////////////////////////////////////////////////////////////////
 
-
-
-// initialization of Matrix elements
-void	initMat(Matrix _A, double _val)
-{
-	// add your code here
-	// add your code here
-	// add your code here
-}
-
 // Create matrix of all zeros
-Matrix	zeros(int _rows, int _cols)
+extern Matrix	zeros(int _rows, int _cols)
 {
 	Matrix Out = createMat(_rows, _cols);
 	// add your code here
@@ -146,13 +146,32 @@ Matrix	zeros(int _rows, int _cols)
 }
 
 
+// Create matrix of all zeros
+extern Matrix	ones(int _rows, int _cols)
+{
+	Matrix Out = createMat(_rows, _cols);
+	// add your code here
+	// add your code here
+	// add your code here
 
-//////////////////////////////////////////////
-/*				Exercise					*/
-//////////////////////////////////////////////
+	return Out;
+}
 
-// Multiply  matrix A and matrix B
-extern	Matrix	multMat(Matrix _A, Matrix _B) {
+
+// Create identity matrix
+extern Matrix eye(int _rows, int _cols)
+{
+	Matrix Out = createMat(_rows, _cols);
+	// add your code here
+	// add your code here
+	// add your code here
+
+	return Out;
+}
+
+
+// Matrix subtraction
+extern	Matrix	subMat(Matrix _A, Matrix _B) {
 	Matrix Out = createMat(_A.rows, _A.cols);
 	// add your code here
 	// add your code here
@@ -160,3 +179,54 @@ extern	Matrix	multMat(Matrix _A, Matrix _B) {
 
 	return Out;
 }
+
+
+// Multiply  matrix A and matrix B  OUT=AB
+extern	Matrix	multMat(Matrix _A, Matrix _B) {
+	Matrix Out = createMat(_A.rows, _B.cols);
+	// add your code here
+	// add your code here
+	// add your code here
+
+	return Out;
+
+}
+
+
+// Multiply  matrix A with a scalar k
+extern	Matrix	smultMat(Matrix _A, double _k) {
+	Matrix Out = createMat(_A.rows, _A.cols);
+	// add your code here
+	// add your code here
+	// add your code here
+
+	return Out;
+}
+
+
+// Create Transpose matrix
+extern	Matrix	transpose(Matrix _A) {
+	Matrix Out = createMat(_A.cols, _A.rows);
+	// add your code here
+	// add your code here
+	// add your code here
+
+	return Out;
+}
+
+
+// Copy matrix
+extern	Matrix	copyMat(Matrix _A) {
+	Matrix Out = createMat(_A.rows, _A.cols);
+	// add your code here
+	// add your code here
+	// add your code here
+
+	return Out;
+
+}
+
+
+
+
+

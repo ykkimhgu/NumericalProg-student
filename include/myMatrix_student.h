@@ -3,7 +3,7 @@
 
 Author           : [YOUR NAME]
 Created          : 26-03-2018
-Modified         : 19-10-2023
+Modified         : 14-10-2024
 Language/ver     : C++ in MSVS2019
 
 Description      : myMatrix.h
@@ -38,6 +38,8 @@ extern	void	printMat(Matrix _A, const char* _name);
 extern	Matrix	addMat(Matrix _A, Matrix _B);
 
 
+// initialization of Matrix elements
+extern	void	initMat(Matrix _A, double _val);
 
 
 
@@ -52,24 +54,24 @@ extern	Matrix	zeros(int _rows, int _cols);
 // Create matrix of all ones
 extern	Matrix	ones(int _rows, int _cols);
 
-// initialization of Matrix elements
-extern	void	initMat(Matrix _A, double _val);
+// Create identity matrix
+extern	Matrix	eye(int _rows, int _cols);
 
+
+// Matrix subtraction
+extern	Matrix	subMat(Matrix _A, Matrix _B);
 
 // Multiply  matrix A and matrix B
 extern	Matrix	multMat(Matrix _A, Matrix _B);
 
-// Create identity 
-extern	Matrix	eye(int _rows, int _cols);
+// Multiply  matrix A with a scalar k
+extern	Matrix	smultMat(Matrix _A, double _k);
 
 // Create Transpose matrix
 extern	Matrix	transpose(Matrix _A);
 
 // Copy matrix
 extern	Matrix	copyMat(Matrix _A);
-
-// Copy matrix Elements from A to B
-extern	void	copyVal(Matrix _A, Matrix _B);
 
 
 #endif
