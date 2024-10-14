@@ -8,6 +8,8 @@ Description      : myNP_tutorial.c
 /----------------------------------------------------------------*/
 
 #include "myNP_tutorial.h"
+// #include "myNP.h"
+
 
 // factorial function
 double factorial(int N)
