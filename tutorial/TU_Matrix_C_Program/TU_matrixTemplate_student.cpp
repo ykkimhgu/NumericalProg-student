@@ -19,14 +19,16 @@ Description      : Tutorial code for using matrix structure
 
 int main(int argc, char* argv[])
 {
-#if _WIN64 | _WIN32
-	/*	 [¡Ø DO NOT EDIT !!!]   Resources file path setting for evaluation	*/
-	//std::string path = "C:/NP_Data/Assignment" + std::to_string(ASGN) + "/";
-	std::string path = "../../NP_Data/Assignment" + std::to_string(ASGN) + "/";
 
-#elif __APPLE__
-	std::string path = "~/NP_Data/Assignment" + std::to_string(ASGN) + "/";
-#endif
+	/*	 [¡Ø DO NOT EDIT !!!]   Resources file path setting for evaluation	*/
+// #if _WIN64 | _WIN32
+// 	std::string path = "C:/NP_Data/Assignment" + std::to_string(ASGN) + "/";
+
+// #elif __APPLE__
+// 	std::string path = "~/NP_Data/Assignment" + std::to_string(ASGN) + "/";
+// #endif
+
+	std::string path = "../../NP_Data/Assignment" + std::to_string(ASGN) + "/";
 #if EVAL
 	path += "eval/";
 #endif
