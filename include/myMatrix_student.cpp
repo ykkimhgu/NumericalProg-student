@@ -9,7 +9,8 @@ Language/ver     : C++ in MSVS2019
 Description      : myMatrix.cpp
 ----------------------------------------------------------------*/
 
-#include "myMatrix.h"
+#include "myMatrix_student.h"
+//#include "myMatrix.h"   
 
 
 
