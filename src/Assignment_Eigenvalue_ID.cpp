@@ -20,15 +20,18 @@ Description     : Assignment 7 Eigenvalue,Eigenvector
 
 // [ CREATE FUNCTIONS ]
 // These must be in myMatrix.h, myMatrix.cpp
-// Matrix eig(Matrix A);
-// Matrix eigvec(Matrix A);
+// Matrix eigval(Matrix A);
 // void QRdecomp(Matrix A, Matrix Q, Matrix R);
+// Matrix eigvec(Matrix A);
+// void eig(Matrix A, Matrix V, Matrix D);
+
+
 
 
 int main(int argc, char *argv[])
 {
 #if _WIN64 | _WIN32
-	/*	 [¢®¨ª DO NOT EDIT !!!]   Resources file path setting for evaluation	*/
+	/*	 [¡Ø DO NOT EDIT !!!]   Resources file path setting for evaluation	*/
 	std::string path = "../../NP_Data/Assignment" + std::to_string(ASGN) + "/";
 #elif __APPLE__
 	//std::string path = "~/NP_Data/Assignment" + std::to_string(ASGN) + "/";
@@ -48,11 +51,15 @@ int main(int argc, char *argv[])
 	Matrix matA_Q1 = txt2Mat(path, "prob1_matA");
 	Matrix eigVals_Q1;
 	Matrix eigVecs_Q1;
+	Matrix matD_Q1;
+	Matrix matV_Q1;
 
 
 	Matrix matA_Q2 = txt2Mat(path, "prob2_matA");
 	Matrix eigVals_Q2;
 	Matrix eigVecs_Q2;
+	Matrix matD_Q2;
+	Matrix matV_Q2;
 
 
 	/*==========================================================================*/
@@ -60,9 +67,11 @@ int main(int argc, char *argv[])
 	/*==========================================================================*/
 
 	// [Eigenval/vectors for Q1]
-	eigVals_Q1 = eig(matA_Q1);
+	eigVals_Q1 = eigval(matA_Q1);
 	eigVecs_Q1 = eigvec(matA_Q1);
+	eig(matA_Q1, matV_Q1, matD_Q1);
 
+		
 	// [Eigenval/vectors for Q2]
 	// YOUR CODE GOES HERE
 	// YOUR CODE GOES HERE
@@ -99,6 +108,8 @@ int main(int argc, char *argv[])
 	// [Deallocate for Q1]
 	freeMat(matA_Q1);	
 	freeMat(valEig_Q1);	freeMat(vecEig_Q1);
+	freeMat(matD_Q1); freeMat(matV_Q1);
+
 
 	// [Deallocate for Q2]
 	// YOUR CODE GOES HERE
