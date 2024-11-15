@@ -41,7 +41,8 @@ extern	Matrix	addMat(Matrix _A, Matrix _B);
 // initialization of Matrix elements
 extern	void	initMat(Matrix _A, double _val);
 
-
+// Create a matrix from 1D-array
+extern Matrix	arr2Mat(double* _1Darray, int _rows, int _cols);  
 
 //////////////////////////////////////////////////////////////////
 /*							Tutorial							*/
