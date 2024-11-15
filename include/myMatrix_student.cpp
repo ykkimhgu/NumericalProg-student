@@ -127,7 +127,17 @@ Matrix	addMat(Matrix _A, Matrix _B)
 
 
 
+// Create a matrix from 1D-array
+Matrix	arr2Mat(double* _1Darray, int _rows, int _cols)
+{
+	Matrix Output = createMat(_rows, _cols);
 
+	for (int i = 0; i < _rows; i++)
+		for (int j = 0; j < _cols; j++)
+			Output.at[i][j] = _1Darray[i * _cols + j];
+
+	return Output;
+}
 
 
 //////////////////////////////////////////////////////////////////
