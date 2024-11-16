@@ -41,7 +41,7 @@ Matrix	polyFit_mat(Matrix _vecX, Matrix _vecY, int n);
 /*			MOVE the following  to  myMatrix.h									 		*/
 /*------------------------------------------------------------------------------------------*/
 // Create a Matrix from 1D-array
-//Matrix	arr2Mat(double* _1Darray, int _rows, int _cols);  // <-- move this to myMatrix.h, myMatrix.cpp
+Matrix	arr2Mat(double* _1Darray, int _rows, int _cols);  // <-- move this to myMatrix.h, myMatrix.cpp
 
 
 int main(int argc, char* argv[])
