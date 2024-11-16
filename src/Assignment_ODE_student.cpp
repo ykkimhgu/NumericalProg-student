@@ -9,17 +9,6 @@ Course			: Numerical Programming
 
 Description     : Assignment 8 ODE IVP
 /------------------------------------------------------------------------------------------*/
-/*------------------------------------------------------------------------------------------\
-@ Numerical Programming  by Young-Keun Kim - Handong Global University
-
-Author          : Young-Keun Kim
-Created         : 01-04-2019
-Modified        : 01-04-2024
-Language/ver	: C in MSVS2017
-Course			: Numerical Programming
-
-Description     : Assignment 8 ODE IVP - SOLUTION
-/------------------------------------------------------------------------------------------*/
 
 #define ASGN	8		// enter your assignment number
 #define EVAL	0		// set 0
