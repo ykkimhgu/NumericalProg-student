@@ -2,7 +2,7 @@
 @ Numerical Methods by Young-Keun Kim - Handong Global University
 
 Author           : YK KIM
-Created          : 25-NOV-2024
+Created          : Nov-27-2024
 Language/ver     : C++ in MSVS2022
 
 Description      : [NP] Final Review Exercise
@@ -10,10 +10,10 @@ Description      : [NP] Final Review Exercise
 
 
 
-#include "../../include/myNP.h"
-#include "../../include/myMatrix.h"
+#include "../../include/myNP_2024.h"
+#include "../../include/myMatrix_2024.h"
 
-void odeFunc_mck(const double t, const double Y[], double dYdt[]);
+void odeFunc_mck(double dYdt[], const double t, const double Y[]);
 double odeFunc_rc(const double t, const double v);
 
 
@@ -23,7 +23,7 @@ int main()
 /*					EX. Linear System
 /*==========================================================================*/
 
-		/************      Variables declaration & initialization      ************/
+	/************      Variables declaration & initialization      ************/
 	double arrA[] = { 0.5, -0.5, 0, 0, 0.87, 0.87,0, 0, 0,0,1,0,0,0,0,1 };	
 	double arrB[] = { 0,-10,-5.75 * cos(PI / 3), 5.75 * sin(PI / 3) };
 
@@ -59,31 +59,40 @@ int main()
 	double k = 800;
 	double c = 200;
 	double m = 10;
-	double arrA2[] = { 0, 1, -k / m, -c / m };
-	Matrix A = zeros(2, 2);
-	Matrix A_Eig = zeros(2, 2);
-	Matrix A_EigVec = zeros(2, 2);
+	double arrC[] = { 0, 1, -k / m, -c / m };
+	Matrix matC = zeros(2, 2);
+	Matrix matC_Eig = zeros(2, 2);
+	Matrix matC_EigVec = zeros(2, 2);
+	matC = arr2Mat(arrC, 2, 2);
+	Matrix vecCoef = zeros(2, 1);
 
-	A = arr2Mat(arrA2, 2, 2);
-
+	/************      Your Numerical Method						     ************/
 	// [TO-DO]  YOUR NP CODE GOES HERE  
 	// eig();
 	// eigVec();
+	// Calculate for coeffcient Coef;
+	// vecYini=matC_EigVec*vecCoef;
+
 
 
 	printf("\n**************************************************");
 	printf("\n|                   Question 2.                  |");
 	printf("\n**************************************************\n");
+	
+	printf("Eigenvalue:\n\n\r");
+	printMat(matC, "Matrix A");
+	printMat(matC_Eig, "EigenValue");
+	printMat(matC_EigVec, "EigenVector");
+	printMat(vecCoef, "Coefficient C");
+	printf("[Response y(t)]\n\r");
+	// [TO DO]  
+	// Print the response y(t) equation
 
-	printf("Eigenvalue:\n\t");
-	printMat(A, "Matrix A");
-	printMat(A_Eig, "EigenValue");
-	printMat(A_EigVec, "EigenVector");
 
 	/************      Deallocate Memory							     ************/
-	freeMat(A);
-	freeMat(A_Eig);
-	freeMat(A_EigVec);
+	freeMat(matC);
+	freeMat(matC_Eig);
+	freeMat(matC_EigVec);
 	// free more matrices
 
 
@@ -102,6 +111,7 @@ int main()
 	double vinit = 11.91;
 	int mtest = 1;
 
+	/************      Your Numerical Method						     ************/
 	// YOUR NP ALGORITHM GOES HERE	
 	// ode()
 
@@ -128,11 +138,9 @@ int main()
 	// initiation of variables
 
 
-
+	/************      Your Numerical Method						     ************/
 	// [TO-DO]  YOUR NP CODE GOES HERE  
 	// sysRK2()
-
-
 
 	printf("\n**************************************************");
 	printf("\n|                   Question 4.                  |");
@@ -164,12 +172,16 @@ int main()
 	Matrix Zopt = zeros(n_x, 1);
 
 
-
+	/************      Your Numerical Method						     ************/
 	// [TO-DO]  YOUR NP CODE GOES HERE  
-	// polyfit()
+	// polyFit_mat()
 	
 
 	// print your result
+	printf("\n**************************************************");
+	printf("\n|                   Question 5.                  |");
+	printf("\n**************************************************\n");
+
 	printf("Linear Regression:\n\t a0=%0.3f \t a1=%0.3f \n", Zopt.at[1][0], Zopt.at[0][0]);	
 	printf("\n\n");
 
@@ -185,8 +197,10 @@ int main()
 	/************      Variables declaration & initialization      ************/
 	
 	double arrT[] = { 1, 2,	3,	4,	5,	6,	7,	8,	9,	10,	11,	12,	13,	14,	15 };
-	double arrV[] = { 9.7 8.1 6.6 5.1 4.4 3.7 2.8 2.4 2.0 1.6 1.4 1.1 0.85 0.69 0.6 };
+	double arrV[] = { 9.7, 8.1, 6.6, 5.1, 4.4, 3.7, 2.8, 2.4, 2.0, 1.6, 1.4, 1.1, 0.85, 0.69, 0.6 };
 
+	/************      Your Numerical Method						     ************/
+	// [TO-DO]  YOUR NP CODE GOES HERE  
 	// [TO-DO]  YOUR NP CODE GOES HERE  
 	// [TO-DO]  YOUR NP CODE GOES HERE  
 
@@ -224,7 +238,7 @@ void odeFunc_mck(double dYdt[], const double t, const double Y[])
 
 
 // Gradient function for ODE - 1st order 
-double odeFunc_rc(const double t, const double v)
+double odeFunc_rc(const double t, const double v) 
 {
 	// Input:	 y, t
 	// Output:	 dydt 
@@ -242,20 +256,3 @@ double odeFunc_rc(const double t, const double v)
 
 	return dvdt;
 }
-
-
-
-
-
-
-//// Create a matrix from 1D-array
-//Matrix	arr2Mat(double* _1Darray, int _rows, int _cols)
-//{
-//	Matrix Output = createMat(_rows, _cols);
-//
-//	for (int i = 0; i < _rows; i++)
-//		for (int j = 0; j < _cols; j++)
-//			Output.at[i][j] = _1Darray[i * _cols + j];
-//
-//	return Output;
-//}
