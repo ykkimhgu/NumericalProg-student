@@ -4,8 +4,8 @@
 Author          : Young-Keun Kim
 Created         : 07-03-2019
 Modified        : 03-01-2021
-Language/ver    : C /  MSVS2017
-Course          : Numerical method 2021-Spring
+Language/ver    : C-Program(C11, MSVS2017)
+Course          : Numerical Programming
 Description     : Tutorial of Bisection Method
 /------------------------------------------------------------------------------------------*/
 
