@@ -2,8 +2,8 @@
 @ Numerical Programming  by Young-Keun Kim - Handong Global University
 
 Author          : Young-Keun Kim
-Created         : 01-04-2019
-Modified        : 01-04-2023
+Created         : Jan-04-2019
+Modified        : Oct-30-2025
 Language/ver	: C in MSVS2017
 Course			: Numerical Programming 
 
@@ -18,8 +18,9 @@ Description     : Assignment 7 Eigenvalue,Eigenvector
 #include "../../include/myNP.h"
 
 
-// [ CREATE FUNCTIONS ]
-// These must be in myMatrix.h, myMatrix.cpp
+//// [ EIG FUNCTIONS ]
+//// These must be in myMatrix.h, myMatrix.cpp
+//
 // Matrix eigval(Matrix A);
 // void QRdecomp(Matrix A, Matrix Q, Matrix R);
 // Matrix eigvec(Matrix A);
@@ -31,7 +32,7 @@ Description     : Assignment 7 Eigenvalue,Eigenvector
 int main(int argc, char *argv[])
 {
 #if _WIN64 | _WIN32
-	/*	 [┬б├Ш DO NOT EDIT !!!]   Resources file path setting for evaluation	*/
+	/*	 [воик DO NOT EDIT !!!]   Resources file path setting for evaluation	*/
 	std::string path = "../../NP_Data/Assignment" + std::to_string(ASGN) + "/";
 #elif __APPLE__
 	//std::string path = "~/NP_Data/Assignment" + std::to_string(ASGN) + "/";
@@ -86,9 +87,9 @@ int main(int argc, char *argv[])
 	printf("			       Eigenvalue & Eigenvector Results					\n");
 	printf("----------------------------------------------------------------------------------------------\n");
 	printf("\n[Eigen value]\n\n");
-	printMat(eigVals_Q1);
+	printMat(eigVals_Q1, "Eigenvalue Q1");
 	printf("\n[Eigen vector]\n\n");
-	printMat(eigVecs_Q1);	
+	printMat(eigVecs_Q1, "Eigenvector Q1");
 	printf("\n\n");
 
 
@@ -106,9 +107,9 @@ int main(int argc, char *argv[])
 	/*==========================================================================*/
 	
 	// [Deallocate for Q1]
-	freeMat(matA_Q1);	
-	freeMat(valEig_Q1);	freeMat(vecEig_Q1);
-	freeMat(matD_Q1); freeMat(matV_Q1);
+	freeMat(matA_Q1);
+	freeMat(eigVals_Q1);	freeMat(eigVecs_Q1);
+	freeMat(matD_Q1);		freeMat(matV_Q1);
 
 
 	// [Deallocate for Q2]
