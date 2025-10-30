@@ -22,7 +22,6 @@ Description     : Assignment 7 Eigenvalue,Eigenvector
 //// These must be in myMatrix.h, myMatrix.cpp
 //
 // Matrix eigval(Matrix A);
-// void QRdecomp(Matrix A, Matrix Q, Matrix R);
 // Matrix eigvec(Matrix A);
 // void eig(Matrix A, Matrix V, Matrix D);
 
@@ -32,7 +31,7 @@ Description     : Assignment 7 Eigenvalue,Eigenvector
 int main(int argc, char *argv[])
 {
 #if _WIN64 | _WIN32
-	/*	 [¢®¨ª DO NOT EDIT !!!]   Resources file path setting for evaluation	*/
+	/*	 [Â¢Â®Â¨Âª DO NOT EDIT !!!]   Resources file path setting for evaluation	*/
 	std::string path = "../../NP_Data/Assignment" + std::to_string(ASGN) + "/";
 #elif __APPLE__
 	//std::string path = "~/NP_Data/Assignment" + std::to_string(ASGN) + "/";
@@ -120,3 +119,4 @@ int main(int argc, char *argv[])
 	system("pause");
 	return 0;
 }
+
