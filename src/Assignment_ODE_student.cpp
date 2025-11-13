@@ -236,16 +236,25 @@ void odeEU(double y[], double odeFunc(const double t, const double y), const dou
 // [BRIEF DESCRIPTION OF THE FUNCTION  GOES HERE]
 // 
 	// Variable Initialization
+	double K1 = 0, K2 = 0;
 	int N = (tf - t0) / h + 1;
 
 	//Initial Condition
-	double ti = t0;
+	double t = t0;
 	y[0] = y_init;
 
 	// Euler Explicit ODE Method
 	for (int i = 0; i < N - 1; i++) {
-		ti += h;
-		y[i + 1] = y[i] + odeFunc(ti, y[i]) * h;
+		// First-point Gradient
+		// [YOUR CODE GOES HERE]	
+		// K1 =_______________  		
+
+		// Estimate: yE(i+1)= y(i) + K1 * h;
+		// [YOUR CODE GOES HERE]	
+		// y[i+1]=_______________  		
+		
+		// Update Time step		
+		t+= h;
 	}
 }
 
@@ -359,4 +368,5 @@ void sys2RK2(double y1[], double y2[], void odeFuncSys(double dYdt[], const doub
 
 
 }
+
 
