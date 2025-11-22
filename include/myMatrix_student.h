@@ -25,24 +25,31 @@ typedef struct {
 // Create Matrix with specified size
 extern	Matrix	createMat(int _rows, int _cols);
 
+// initialization of Matrix elements
+extern	void	initMat(Matrix _A, double _val);
+
 // Free a memory allocated matrix
 extern	void	freeMat(Matrix _A);
+
+// Copy matrix
+extern	Matrix	copyMat(Matrix _A);
+
+// Copy matrix Elements from A to B
+extern	void	copyVal(Matrix _A, Matrix _B);
 
 // Create a matrix from a text file
 extern	Matrix	txt2Mat(std::string _filePath, std::string _fileName);
 
-//// Print matrix
+// Create a matrix from 1D-array
+extern Matrix	arr2Mat(double* _1Darray, int _rows, int _cols);  
+
+// Print matrix
 extern	void	printMat(Matrix _A, const char* _name);
 
 // Matrix addition
 extern	Matrix	addMat(Matrix _A, Matrix _B);
 
 
-// initialization of Matrix elements
-extern	void	initMat(Matrix _A, double _val);
-
-// Create a matrix from 1D-array
-extern Matrix	arr2Mat(double* _1Darray, int _rows, int _cols);  
 
 //////////////////////////////////////////////////////////////////
 /*							Tutorial							*/
@@ -71,8 +78,7 @@ extern	Matrix	smultMat(Matrix _A, double _k);
 // Create Transpose matrix
 extern	Matrix	transpose(Matrix _A);
 
-// Copy matrix
-extern	Matrix	copyMat(Matrix _A);
 
 
 #endif
+
