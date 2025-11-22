@@ -23,43 +23,6 @@ void	freeMat(Matrix _A)
 	free(_A.at);
 }
 
-// Create a matrix from a text file
-Matrix	txt2Mat(std::string _filePath, std::string _fileName)
-{
-	std::ifstream file;
-	std::string temp_string, objFile = _filePath + _fileName + ".txt";
-	int temp_int = 0, nRows = 0;
-
-	file.open(objFile);
-	if (!file.is_open()) {
-		printf("\n*********************************************");
-		printf("\n  Could not access file: 'txt2Mat' function");
-		printf("\n*********************************************\n");
-		return createMat(0, 0);
-	}
-	while (getline(file, temp_string, '\t'))
-		temp_int++;
-	file.close();
-
-	file.open(objFile);
-	while (getline(file, temp_string, '\n'))
-		nRows++;
-	file.close();
-
-	int nCols = (temp_int - 1) / nRows + 1;
-	Matrix Out = createMat(nRows, nCols);
-
-	file.open(objFile);
-	for (int i = 0; i < nRows; i++)
-		for (int j = 0; j < nCols; j++) {
-			file >> temp_string;
-			Out.at[i][j] = stof(temp_string);
-		}
-	file.close();
-
-	return Out;
-}
-
 // Create Matrix with specified size
 Matrix	createMat(int _rows, int _cols)
 {
@@ -138,6 +101,73 @@ Matrix	arr2Mat(double* _1Darray, int _rows, int _cols)
 
 	return Output;
 }
+
+
+// Create a matrix from a text file
+Matrix	txt2Mat(std::string _filePath, std::string _fileName)
+{
+	std::ifstream file;
+	std::string temp_string, objFile = _filePath + _fileName + ".txt";
+	int temp_int = 0, nRows = 0;
+
+	file.open(objFile);
+	if (!file.is_open()) {
+		printf("\n*********************************************");
+		printf("\n  Could not access file: 'txt2Mat' function");
+		printf("\n*********************************************\n");
+		return createMat(0, 0);
+	}
+	while (getline(file, temp_string, '\t'))
+		temp_int++;
+	file.close();
+
+	file.open(objFile);
+	while (getline(file, temp_string, '\n'))
+		nRows++;
+	file.close();
+
+	int nCols = (temp_int - 1) / nRows + 1;
+	Matrix Out = createMat(nRows, nCols);
+
+	file.open(objFile);
+	for (int i = 0; i < nRows; i++)
+		for (int j = 0; j < nCols; j++) {
+			file >> temp_string;
+			Out.at[i][j] = stof(temp_string);
+		}
+	file.close();
+
+	return Out;
+}
+
+
+// Copy matrix
+Matrix	copyMat(Matrix _A)
+{
+	Matrix Output = createMat(_A.rows, _A.cols);
+
+	for (int i = 0; i < _A.rows; i++)
+		for (int j = 0; j < _A.cols; j++)
+			Output.at[i][j] = _A.at[i][j];
+
+	return Output;
+}
+
+// Copy matrix Elements from A to B
+void	copyVal(Matrix _A, Matrix _B)
+{
+	if (_A.rows != _B.rows || _A.cols != _B.cols) {
+		printf("\n**************************************************");
+		printf("\n| ERROR!!: dimension error at 'copyVal' function |");
+		printf("\n**************************************************\n");
+		return;
+	}
+
+	for (int i = 0; i < _A.rows; i++)
+		for (int j = 0; j < _A.cols; j++)
+			_B.at[i][j] = _A.at[i][j];
+}
+
 
 
 //////////////////////////////////////////////////////////////////
@@ -225,16 +255,6 @@ extern	Matrix	transpose(Matrix _A) {
 }
 
 
-// Copy matrix
-extern	Matrix	copyMat(Matrix _A) {
-	Matrix Out = createMat(_A.rows, _A.cols);
-	// add your code here
-	// add your code here
-	// add your code here
-
-	return Out;
-
-}
 
 
 
