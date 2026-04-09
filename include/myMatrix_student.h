@@ -33,6 +33,7 @@ extern	void	freeMat(Matrix _A);
 
 // Copy matrix
 extern	Matrix	copyMat(Matrix _A);
+extern void	copyMatrix(Matrix _A, Matrix _B);
 
 // Copy matrix Elements from A to B
 extern	void	copyVal(Matrix _A, Matrix _B);
