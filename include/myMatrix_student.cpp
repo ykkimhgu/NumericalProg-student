@@ -154,6 +154,22 @@ Matrix	copyMat(Matrix _A)
 }
 
 // Copy matrix Elements from A to B
+void	copyMatrix(Matrix _A, Matrix _B)
+{
+	if (_A.rows != _B.rows || _A.cols != _B.cols) {
+		printf("\n**************************************************");
+		printf("\n| ERROR!!: dimension error at 'copyVal' function |");
+		printf("\n**************************************************\n");
+		return;
+	}
+
+	for (int i = 0; i < _A.rows; i++)
+		for (int j = 0; j < _A.cols; j++)
+			_B.at[i][j] = _A.at[i][j];
+}
+
+
+// Copy matrix Elements from A to B
 void	copyVal(Matrix _A, Matrix _B)
 {
 	if (_A.rows != _B.rows || _A.cols != _B.cols) {
