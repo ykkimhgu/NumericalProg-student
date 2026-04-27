@@ -3,7 +3,7 @@
 
 Author          : Young-Keun Kim
 Created         : Jan-04-2019
-Modified        : Oct-30-2025
+Modified        : April-27-2026
 Language/ver	: C in MSVS2017
 Course			: Numerical Programming
 
@@ -27,7 +27,7 @@ Matrix eigvec_student(Matrix A);
 int main(int argc, char* argv[])
 {
 #if _WIN64 | _WIN32
-	/*	 [¢®¨ª DO NOT EDIT !!!]   Resources file path setting for evaluation	*/
+	/*	 [Â¢Â®Â¨Âª DO NOT EDIT !!!]   Resources file path setting for evaluation	*/
 	std::string path = "../../NP_Data/Assignment" + std::to_string(ASGN) + "/";
 #elif __APPLE__
 	//std::string path = "~/NP_Data/Assignment" + std::to_string(ASGN) + "/";
@@ -104,8 +104,12 @@ Matrix eigval_student(Matrix _A) {
 	int N = _A.rows;
 	Matrix Q = createMat(N, N);
 	Matrix R = createMat(N, N);
-	Matrix U = copyMat(_A);
+	Matrix U = createMat(N, N);
 	Matrix eigOut = zeros(N, 1);
+
+	// Initialization for U
+	Matrix U = copyMatrix(_A);
+	
 	int itrMax = 200;
 
 	// (OPTION) Check for Error	:  Dimension of A should be square 
@@ -140,7 +144,7 @@ Matrix eigval_student(Matrix _A) {
 // QR Factorization using HouseHold Matrix
 // Input:	A(nxn)
 // Output:	Q(nxn), R(nxn)
-void QRdecomp_student(Matrix _A, Matrix* _Q, Matrix* _R)
+void QRdecomp_student(Matrix Q, Matrix R, Matrix _A)
 {
 	int N = _A.rows;
 	Matrix I = eye(N, N);
@@ -148,10 +152,14 @@ void QRdecomp_student(Matrix _A, Matrix* _Q, Matrix* _R)
 	Matrix e = zeros(N, 1);
 	Matrix v = zeros(N, 1);
 	Matrix H = zeros(N, N);
-
-	// Local R, Q
-	Matrix R = copyMat(_A);
-	Matrix Q = copyMat(I);
+	
+	// Temporal Copy of input _A
+	Matrix A= zeros(N, N);
+	copyMatrix(A,_A);
+	
+	// Initialize R, Q
+	copyMatrix(R,_A);
+	copyMatrix(Q, I);
 
 	for (int j = 0; j < N - 1; j++) {
 		//  Step 1. Create vector[c]
@@ -173,13 +181,7 @@ void QRdecomp_student(Matrix _A, Matrix* _Q, Matrix* _R)
 
 	}
 
-	// Copy temporary R,Q to returning _R, _Q
-	*_R = copyMat(R);
-	*_Q = copyMat(Q);
-
-	// Free R, Q
-	freeMat(R);
-	freeMat(Q);
+		
 }
 
 
