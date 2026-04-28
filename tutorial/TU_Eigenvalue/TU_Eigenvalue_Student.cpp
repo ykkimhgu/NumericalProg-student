@@ -21,7 +21,7 @@ Description     : Tutorial:  Eigenvalue,Eigenvector
 // [ TUTORIAL:  CREATE FUNCTIONS ]
 // These must be in myMatrix.h, myMatrix.cpp
 Matrix eigval_student(Matrix A);
-void QRdecomp_student(Matrix _A, Matrix* _Q, Matrix* _R);
+void QRdecomp_student(Matrix Q, Matrix R, Matrix _A);
 Matrix eigvec_student(Matrix A);
 
 int main(int argc, char* argv[])
