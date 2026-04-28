@@ -108,7 +108,7 @@ Matrix eigval_student(Matrix _A) {
 	Matrix eigOut = zeros(N, 1);
 
 	// Initialization for U
-	Matrix U = copyMatrix(_A);
+	copyMatrix(U,_A);
 	
 	int itrMax = 200;
 
