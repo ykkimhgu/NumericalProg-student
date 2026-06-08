@@ -7,7 +7,7 @@ Modified        : 12-08-2022
 Language/ver	: C in MSVS2017
 Course			: Numerical Programming
 
-Description     : TU System of NonLinear - Solution
+Description     : TU Gradient Descent - Part 2
 /------------------------------------------------------------------------------------------*/
 
 
