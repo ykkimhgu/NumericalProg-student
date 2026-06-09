@@ -3,7 +3,7 @@
 
 Author           : [YOUR NAME]
 Created          : 26-03-2018
-Modified         : 14-10-2024
+Modified         : 14-10-2026
 Language/ver     : C++ in MSVS2019
 
 Description      : myMatrix.h
